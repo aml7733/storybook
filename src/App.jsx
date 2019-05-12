@@ -1,13 +1,13 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import './App.css';
 import Body from './Body';
+import Header from './Header';
 
 function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      // header
+      <Header />
       <Body />
     </React.Fragment>
   );
