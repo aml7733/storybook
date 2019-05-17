@@ -1,20 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Paper from '@material-ui/core/Paper';
 import Note from './Note';
 
 const Notes = ({ notes }) => (
   <div>
-    <Note />
-    { notes.map(note => <Note title={note.title} text={note.text} tags={note.tags} />) }
+    <Paper>
+      <Note />
+    </Paper>
+    { notes.map(note => (
+      <Paper key={note.title}>
+        <Note title={note.title} text={note.text} tags={note.tags} />
+      </Paper>
+    )) }
   </div>
 );
 
-export default Notes;
-
 Notes.propTypes = {
-  notes: PropTypes.arrayOf(PropTypes.instanceOf(Note)),
+  notes: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    tags: PropTypes.array,
+  })),
 };
 
 Notes.defaultProps = {
   notes: [],
 };
+
+export default Notes;

@@ -15,7 +15,7 @@ const placeholderNotes = [
 const Body = () => (
   <Grid container spacing={8}>
     <Grid item xs>
-      <Paper><Tree /></Paper>
+      <Paper><Tree tree={{ key: 'value' }} /></Paper>
     </Grid>
     <Grid item xs={6}>
       <Paper><NuggetInput text="NuggetInputText" /></Paper>

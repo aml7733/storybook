@@ -1,10 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Typography from '@material-ui/core/Typography';
 
-const Header = (props) => {
-  return (
-    <div />
-  );
-};
+const Header = () => (
+  <div>
+    <Typography variant="h2" align="center" gutterBottom>
+      Storybook Writing Assistant
+    </Typography>
+  </div>
+);
 
 export default Header;

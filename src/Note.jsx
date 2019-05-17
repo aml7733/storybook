@@ -45,26 +45,28 @@ class Note extends Component {
     };
 
     return (
-      <Paper>
-        <TextField
-          id={id}
-          label="Title"
-          value={title}
-          onChange={this.handleChange('title')}
-          variant="filled"
-        />
-        <Paper><textarea id={id} value={text} name="text" onChange={this.handleChange('text')} /></Paper>
-
-        <Paper className={styles.root}>
-          { tags.forEach(
-            tag => (
-              <Chip
-                key={tag.id}
-                label={tag.text}
-                className={styles.chip}
-              />
-            ),
-          )}
+      <Paper style={styles.root}>
+        <Paper key="0">
+          <TextField
+            id={`${id}`}
+            label="Title"
+            value={title}
+            onChange={this.handleChange('title')}
+            variant="filled"
+          />
+          <textarea id={`${id}`} value={text} name="text" onChange={this.handleChange('text')} />
+        </Paper>
+        <Paper key="1">
+          { // eventually have Tag component
+            tags.map(
+              tag => (
+                <Chip
+                  key={tag}
+                  style={styles.chip}
+                />
+              ),
+            )
+          }
         </Paper>
       </Paper>
     );
@@ -77,7 +79,7 @@ Note.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,
   text: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.string),
+  tags: PropTypes.arrayOf(PropTypes.number),
 };
 
 Note.defaultProps = {

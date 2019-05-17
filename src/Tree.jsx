@@ -15,8 +15,8 @@ class Tree extends React.Component {
 
     return (
       <Paper>
-        Tree goes here + state.tree =
-        { tree }
+        Object to string===   key:
+        {tree.key}
       </Paper>
     );
   }
