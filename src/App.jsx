@@ -7,7 +7,8 @@ function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      // header
+      { // header
+      }
       <Body />
     </React.Fragment>
   );
